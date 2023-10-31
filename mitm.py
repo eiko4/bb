@@ -8,7 +8,7 @@ from mitmproxy.net.http.http1.assemble import assemble_request, assemble_respons
 def response(flow):
     #flow.request.headers["myheader"] = "value"
     #print(flow.request.raw_content);
-    if flow.request.host == "www.bbc.com" and flow.request.raw_content is not None:
+    if flow.request.pretty_host == "www.bbc.com" and flow.request.raw_content is not None:
      response = flow.response.copy()  # type: ignore
      response.decode(strict=False)
      raw_resp = myassemble_response(response);
